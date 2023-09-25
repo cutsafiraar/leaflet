@@ -55,6 +55,8 @@ export class HomePage {
     });
     
     
-    const marker = L.marker([-7.767669524047528, 110.37775455941811], { icon: markerIcon }).addTo(this.map);
+    const marker = L.marker([-7.767669524047528, 110.37775455941811], { icon: markerIcon }).addTo(this.map)
+    .bindPopup('halo, disini UGM.')
+    .openPopup();
   }
 }
