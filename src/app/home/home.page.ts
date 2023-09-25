@@ -46,8 +46,15 @@ export class HomePage {
     // Tambahkan kontrol lapisan ke peta
     L.control.layers(baseMap).addTo(this.map);
 
-    L.marker([-7.767669524047528, 110.37775455941811]).addTo(this.map)
-      .bindPopup('halo, disini UGM.')
-      .openPopup();
+    const markerIcon = L.icon({
+      iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png', // Ganti dengan URL ikon marker default dari CDN
+      iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png', // Ganti dengan URL ikon marker default 2x dari CDN
+      shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png', // Ganti dengan URL bayangan marker default dari CDN
+      iconSize: [25, 41], // Sesuaikan dengan ukuran ikon Anda
+      iconAnchor: [12, 41], // Sesuaikan dengan titik penunjuk ikon Anda
+    });
+    
+    
+    const marker = L.marker([-7.767669524047528, 110.37775455941811], { icon: markerIcon }).addTo(this.map);
   }
 }
